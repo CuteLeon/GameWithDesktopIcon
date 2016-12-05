@@ -22,13 +22,25 @@ Partial Class GameForm
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.WorkButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
+        '
+        'WorkButton
+        '
+        Me.WorkButton.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WorkButton.Location = New System.Drawing.Point(0, 0)
+        Me.WorkButton.Name = "WorkButton"
+        Me.WorkButton.Size = New System.Drawing.Size(139, 40)
+        Me.WorkButton.TabIndex = 0
+        Me.WorkButton.Text = "开始"
+        Me.WorkButton.UseVisualStyleBackColor = True
         '
         'GameForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(91, 0)
+        Me.ClientSize = New System.Drawing.Size(139, 40)
+        Me.Controls.Add(Me.WorkButton)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "GameForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -36,4 +48,6 @@ Partial Class GameForm
         Me.ResumeLayout(False)
 
     End Sub
+
+    Friend WithEvents WorkButton As Button
 End Class

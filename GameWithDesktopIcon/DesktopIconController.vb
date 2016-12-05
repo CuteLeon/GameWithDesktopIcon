@@ -159,7 +159,7 @@ Module DesktopIconController
         Dim PIconPosition As IntPtr = VirtualAllocEx(HandleProcess, IntPtr.Zero, SizeOfPoint, MEM_COMMIT, PAGE_READWRITE)
         Dim PIconText As IntPtr = VirtualAllocEx(HandleProcess, IntPtr.Zero, MAX_PATH * 2, MEM_COMMIT, PAGE_READWRITE)
         Dim PIconItem As IntPtr = VirtualAllocEx(HandleProcess, IntPtr.Zero, GetLvItemSize(), MEM_COMMIT, PAGE_READWRITE)
-        SendMessage(DesktopHandle, LVM_SETITEMPOSITION, IconIndex, IconPosition.X Or CInt(CUShort(IconPosition.Y)) << 16)
+        SendMessage(DesktopHandle, LVM_SETITEMPOSITION, IconIndex, IconPosition.X Or CInt(CShort(IconPosition.Y)) << 16)
         VirtualFreeEx(HandleProcess, PIconPosition, SizeOfPoint, 0)
         VirtualFreeEx(HandleProcess, PIconText, MAX_PATH * 2, 0)
         VirtualFreeEx(HandleProcess, PIconItem, GetLvItemSize(), 0)
